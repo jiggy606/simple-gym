@@ -26,6 +26,7 @@ const SubscriptionHeader = styled.div`
 `
 const SubscriptionText = styled.span`
     cursor: pointer;
+    
 
     &:hover {
         color: black;
