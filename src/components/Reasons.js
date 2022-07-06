@@ -14,6 +14,10 @@ const Container = styled.div`
     padding: 0 2rem;
     display: flex;
     gap: 2rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 const Left = styled.div`
@@ -22,6 +26,11 @@ const Left = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     grid-auro-rows: 1fr;
+
+    @media (max-width: 768px) {
+        grid-auro-rows: auto;
+        overflow: hidden; 
+    }
 `
 
 const Image = styled.img``
@@ -96,8 +105,8 @@ const Reasons = () => {
                 <RightSpan>some reasons</RightSpan>
 
                 <RightText>
-                    <span className='stroke-text'>why? </span>
-                    <span className=''>choose us</span>
+                    <span className='stroke-text'>why </span>
+                    <span className=''>choose us?</span>
                 </RightText>
 
                 <DetailsContainer>

@@ -21,6 +21,15 @@ const ProgramsHeader = styled.div`
     color: #fff;
     text-transform: uppercase;
     font-style: italic;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1rem;
+        font-size: x-large;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+    }
 `
 
 const ProgramsText = styled.span`
@@ -34,6 +43,10 @@ const ProgramsText = styled.span`
 const ProgramCategories = styled.div`
     display: flex;
     gap: 1rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 const ProgramCategory = styled.div`

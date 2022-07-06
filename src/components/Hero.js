@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 
+// import { motion } from 'framer-motion';
+
 import Header from './Header';
 
 import hero_image from '../assets/hero_image.png';
@@ -11,7 +13,21 @@ import calories_img from '../assets/calories.png';
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
+
+const Blur = styled.div`
+    width: 22rem;
+    height: 30rem;
+    left: 0;
+
+    @media (max-width: 768px) {
+        width: 14rem;
+    }
+`
 
 const Left = styled.div`
     display: flex;
@@ -34,6 +50,13 @@ const Advert = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @media (max-width: 768px) {
+        margin-top: 0;
+        font-size: small;
+        align-self: center;
+        transform: scale(0.8);
+    }
 `;
 
 const DivAnimate = styled.div`
@@ -59,6 +82,12 @@ const HeroText = styled.div`
     font-weight: bold;
     color: white;
     text-overflow: inherit;
+
+    @media (max-width: 768px) {
+        font-size: xx-large;
+        align-items: center;
+        justify-content: center;
+    }
 `
 
 const HeroTextFirst = styled.div``
@@ -70,6 +99,13 @@ const HeroTextSpan = styled.span`
     text-transform: none;
     letter-spacing: 1px;
     width: 80%;
+
+    @media (max-width: 768px) {
+        font-size: small;
+        font-weight: 200;
+        letter-spacing: 1px;
+        text-align: center;
+    }
 `
 const Figures = styled.div`
     display: flex;
@@ -84,17 +120,29 @@ const FiguresBox = styled.div`
 const FiguresNumbers = styled.span`
     color: white;
     font-size: 2rem;
+
+    @media (max-width: 768px) {
+        font-size: large;
+    }
 `
 
 const FiguresDetails = styled.span`
     color: var(--gray);
     text-transform: uppercase;
+
+    @media (max-width: 768px) {
+        font-size: small;
+    }
 `
 
 const ButtonParent = styled.div`
     display: flex;
     gap: 1rem;
     font-weight: normal;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
 `
 
 const ButtonA = styled.button`
@@ -115,6 +163,11 @@ const Right = styled.div`
     flex: 1;
     position: relative;
     background-color: var(--orange);
+
+    @media (max-width: 768px) {
+        position: relative;
+        background: none;
+    }
 `;
 
 const ButtonRight = styled.button`
@@ -144,6 +197,11 @@ const HeartRate = styled.div`
     position: absolute;
     right: 4rem;
     top: 7rem;
+
+    @media (max-width: 768px) {
+        top: 2rem;
+        left: 1rem;
+    }
 `
 
 const Image = styled.img`
@@ -164,6 +222,14 @@ const HeroImage = styled.img`
     top: 10rem;
     right: 8rem;
     width: 21.5rem;
+
+    @media (max-width: 768px) {
+        position: relative;
+        width: 15rem;
+        left: 7rem;
+        top: 4rem;
+        align-self: center;
+    }
 `
 
 const HeroImageBack = styled.img`
@@ -172,6 +238,12 @@ const HeroImageBack = styled.img`
     right: 20rem;
     z-index: -1;
     width: 15rem;
+
+    @media (max-width: 768px) {
+        width: 15rem;
+        left: 2rem;
+        top: 0rem;
+    }
 `
 
 const Calories = styled.div`
@@ -184,10 +256,20 @@ const Calories = styled.div`
     position: absolute;
     top: 32rem;
     right: 28rem;
+
+    @media (max-width: 768px) {
+        position: relative;
+        top: 5rem;
+        left: 2rem;
+    }
 `
 
 const CaloriesImg = styled.img`
     width: 3rem;
+
+    @media (max-width: 768px) {
+        width: 2rem;
+    }
 `
 
 const CaloriesDetails = styled.div`
@@ -203,17 +285,27 @@ const CaloriesText = styled.span`
 const CaloriesNumber = styled.span`
     color: #fff;
     font-size: 1.5rem;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        color: #fff;
+    }
 `
 
 const Hero = () => {
+
+    // const transition = { type: 'spring', duration: 3 };
+    // const mobile = window.innerWidth<=768 ? true : false;
+
     return (
         <Container>
-            <Left>
-                
-                <Header />
+            
+            <Blur className='blur'/>
 
+            <Left>
+                <Header />
                 <Advert>
-                    <DivAnimate></DivAnimate>
+                    {/* <DivAnimate initial={{left: '238px'}} whileInView={{left: '8px'}} transition={{transition}}></DivAnimate> */}
                     <DivAnimateText>talk of the town. come and find out!</DivAnimateText>
                 </Advert>
 

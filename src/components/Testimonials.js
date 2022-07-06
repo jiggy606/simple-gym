@@ -10,6 +10,10 @@ const Container = styled.div`
     display: flex;
     gap: 1rem;
     padding: 0 2rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 const Left = styled.div`
@@ -30,6 +34,10 @@ const LeftText = styled.span`
     &:nth-child(2), &:nth-child(3) {
         font-weight: bold;
         font-size: 3rem;
+
+        @media (max-width: 768px) {
+            font-size: xx-large;
+        }
     }
 `
 
@@ -49,6 +57,22 @@ const TestimonialsDataName = styled.span`
 const Right = styled.div`
     flex: 1;
     position: relative;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    :last-child {
+        @media (max-width: 768px) {
+            display: block;
+            bottom: 0;
+            left: 0;
+        }
+    }
 `
 const Fill = styled.div`
     position: absolute;
@@ -58,6 +82,11 @@ const Fill = styled.div`
     top: 0.9rem;
     right: 9rem;
     background-color: transparent;
+
+    @media (max-width: 768px) {
+        position: relative;
+        display: none;
+    }
 `
 
 const Full = styled.div`
@@ -67,6 +96,11 @@ const Full = styled.div`
     right: 7rem;
     top: 4rem;
     background: var(--planCard);
+
+    @media (max-width: 768px) {
+        position: relative;
+        display: none;
+    }
 `
 
 const RightImage = styled.img`
@@ -76,6 +110,13 @@ const RightImage = styled.img`
     object-fit: cover;
     right: 8rem;
     top: 2rem;
+
+    @media (max-width: 768px) {
+        top: 0;
+        right: 0;
+        position: relative;
+        align-self: center;
+    }
 `
 
 const Arrows = styled.div`
@@ -84,6 +125,12 @@ const Arrows = styled.div`
     bottom: 1rem;
     left: 3rem;
     gap: 1rem;
+
+   ${'' /*  @media (max-width: 768px) {
+        display: block;
+        bottom: 0;
+        left: 0;
+    } */}
 `
 
 const ArrowsRight = styled.img`
@@ -118,6 +165,7 @@ const Testimonials = () => {
                     - {testimonialsData[selected].status}
                 </TestimonialsData>
             </Left>
+
             <Right>
                 <Fill></Fill>
                 <Full></Full>

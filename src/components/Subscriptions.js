@@ -14,6 +14,19 @@ const Container = styled.div`
     position: relative;
 `
 
+const Blur1 = styled.div`
+    width: 32rem;
+    height: 23rem;
+    left: 0rem;
+    top: 6rem;
+`
+const Blur2 = styled.div`
+    width: 32rem;
+    height: 23rem;
+    top: 10rem;
+    right: 0rem;
+`
+
 const SubscriptionHeader = styled.div`
     display: flex;
     gap: 5rem;
@@ -38,6 +51,10 @@ const SubscriptionPlans = styled.div`
     align-items: center;
     justify-content: center;
     gap: 3rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 const SubscriptionPlan = styled.div`
@@ -55,6 +72,10 @@ const SubscriptionPlan = styled.div`
 
         svg {
             fill: #fff;
+        }
+
+        @media (max-width: 768px) {
+            transform: none;
         }
 
         button {
@@ -114,6 +135,10 @@ const BenefitsButton = styled.button``
 const Subscriptions = () => {
     return (
         <Container>
+            
+            <Blur1 className='blur' />
+            <Blur2 className='blur' />
+
             <SubscriptionHeader>
                 <SubscriptionText className='stroke-text'>ready to start</SubscriptionText>
                 <SubscriptionText>your journey</SubscriptionText>
